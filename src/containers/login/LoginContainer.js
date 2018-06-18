@@ -12,17 +12,16 @@ class LoginContainer extends Component {
         header: null
     }
     login = (params) => {
-        // const emailValidation = validate('email', params.email.trim())
-        // const passwordValidation = validate('password', params.password.trim())
+        const emailValidation = validate('email', params.email.trim())
+        const passwordValidation = validate('password', params.password.trim())
 
-        // if (emailValidation.isError) {
-        //     alert(emailValidation.messageError)
-        // } else if (passwordValidation.isError) {
-        //     alert(emailValidation.messageError)
-        // } else {
-        //     this.props.login(params)
-        // }
-         this.props.login(params)
+        if (emailValidation.isError) {
+            alert(emailValidation.messageError)
+        } else if (passwordValidation.isError) {
+            alert(emailValidation.messageError)
+        } else {
+            this.props.login(params)
+        }
     }
     render() {
         return (

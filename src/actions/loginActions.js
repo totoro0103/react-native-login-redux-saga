@@ -4,7 +4,7 @@ export const login = (params) => {
         type: LOGIN,
         isLoading: true,
         isError: false,
-        params: { email: 'hoangpt@hblab.vn', password: '123456' }
+        params: params
     }
 }
 export const loginSuccess = (userInfo) => {
