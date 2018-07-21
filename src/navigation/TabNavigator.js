@@ -1,9 +1,7 @@
-import { createTabNavigator } from 'react-navigation';
-import OverTimeContainer from '../containers/ot/OverTimeContainer';
+// import { createTabNavigator } from 'react-navigation';
 
-const TabNavigator = createTabNavigator(
-    {
-        overTime: OverTimeContainer
-    }
-)
-export default TabNavigator
+// const TabNavigator = createTabNavigator(
+//     {
+//     }
+// )
+// export default TabNavigator

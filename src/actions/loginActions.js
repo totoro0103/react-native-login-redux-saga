@@ -1,24 +1,16 @@
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILED } from '../actions/types';
-export const login = (params) => {
-    return {
-        type: LOGIN,
-        isLoading: true,
-        isError: false,
-        params: params
-    }
-}
-export const loginSuccess = (userInfo) => {
-    return {
-        type: LOGIN_SUCCESS,
-        isLoading: false,
-        isError: false,
-        userInfo: userInfo
-    }
-}
-export const loginFailed = () => {
-    return {
-        type: LOGIN_FAILED,
-        isLoading: false,
-        isError: true,
-    }
-}
+import { LOGIN, SET_USER_INFO, FETCH_USER_INFO } from './types';
+export const login = (params, onSuccess, onError) => ({
+    type: LOGIN,
+    params,
+    onSuccess,
+    onError
+})
+export const setUserInfo = (data) => ({
+    type: SET_USER_INFO,
+    data,
+})
+export const fetchUserInfo = (onSuccess, onError) => ({
+    type: FETCH_USER_INFO,
+    onSuccess,
+    onError
+})

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Button } from 'react-native';
-import TMSTextInput from '../commons/TMSTextInput';
+import Input from '../commons/Input';
 
 class Login extends Component {
     state = { email: '', password: '' }
@@ -8,10 +8,10 @@ class Login extends Component {
     render() {
         return (
             <View style={styles.container} >
-                <TMSTextInput
+                <Input
                     placeholder='Email'
                     onChangeText={(value) => this.setState({ email: value })} />
-                <TMSTextInput
+                <Input
                     placeholder='Password'
                     secureTextEntry
                     onChangeText={(value) => this.setState({ password: value })} />

@@ -4,26 +4,23 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import allReducers from '../src/reducers/index';
-import AppNavigation from '../src/navigation/AppNavigation';
+import allReducers from './reducers';
+import AppNavigation from './navigation/AppNavigation';
 import creatSagaMiddleware from 'redux-saga';
-import rootSaga from '../src/sagas/rootSaga';
-import NavigationService from './navigation/NavigationService';
+import rootSaga from './sagas/rootSaga';
 
 const sagaMiddleware = creatSagaMiddleware()
 let store = createStore(allReducers, applyMiddleware(sagaMiddleware))
+sagaMiddleware.run(rootSaga)
 
 const App = () => {
   return (
     <Provider store={store}>
-      <AppNavigation ref={navigatorRef => {
-        NavigationService.setTopLevelNavigator(navigatorRef);
-      }} />
+      <AppNavigation />
     </Provider>
   )
 }
-sagaMiddleware.run(rootSaga)
 export default App
